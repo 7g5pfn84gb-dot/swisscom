@@ -23,14 +23,20 @@
             scroll-behavior: smooth;
         }
 
-        /* Hero Hintergrund mit Matterhorn Bild */
+        /* Hero Hintergrund mit optimiertem Dateinamen */
         .hero-bg {
             position: relative;
-            /* WICHTIG: Die Bilddatei muss exakt so heissen und im gleichen Ordner auf GitHub liegen */
-            background-image: linear-gradient(rgba(28, 25, 23, 0.6), rgba(28, 25, 23, 0.4)), url('Matterhorn_from_Domhütte_-_2.jpg');
+            background-image: linear-gradient(rgba(28, 25, 23, 0.6), rgba(28, 25, 23, 0.4)), url('matterhorn.jpg');
             background-size: cover;
             background-position: center 30%;
             background-attachment: fixed;
+        }
+
+        /* Fallback für Mobile (Fixed Background Support) */
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
         }
 
         .chart-container {
@@ -54,7 +60,6 @@
             border-bottom: 1px solid rgba(231, 229, 228, 0.5);
         }
 
-        /* Matterhorn-inspiriertes CSS Logo */
         .mountain-logo {
             width: 0;
             height: 0;
@@ -109,7 +114,7 @@
         </div>
     </nav>
 
-    <!-- Hero Bereich -->
+    <!-- Hero Sektion -->
     <header class="hero-bg min-h-[80vh] flex items-center justify-center px-6 text-center text-white">
         <div class="max-w-4xl mx-auto fade-in">
             <span class="text-orange-500 font-bold tracking-[0.4em] uppercase text-xs mb-6 block">Swisscom Trust Services | Engagement Strategie</span>
@@ -121,7 +126,7 @@
             </p>
             <div class="flex justify-center space-x-4">
                 <div class="h-1 w-12 bg-orange-600 self-center"></div>
-                <span class="text-sm font-bold uppercase tracking-widest">Christoph Caspar – Engagement Manager Dossier</span>
+                <span class="text-sm font-bold uppercase tracking-widest">Christoph – Engagement Manager Dossier</span>
                 <div class="h-1 w-12 bg-orange-600 self-center"></div>
             </div>
         </div>
