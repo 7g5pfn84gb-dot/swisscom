@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategie-Dossier | Engagement Manager STS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        :root {
+            --sc-blue: #0011FF;
+            --sc-orange: #FF5000;
+            --stone-50: #FAFAF9;
+            --stone-900: #1C1917;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--stone-50);
+            color: var(--stone-900);
+            scroll-behavior: smooth;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        .nav-link.active {
+            color: var(--sc-blue);
+            border-bottom: 2px solid var(--sc-orange);
+            font-weight: 700;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(231, 229, 228, 0.4);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-interaction:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05);
+        }
+    </style>
+    <!-- Chosen Palette: Swisscom Modern (Warme Neutralkolben mit Akzenten in Signal-Blau und Orange) -->
+    <!-- Application Structure Plan: Ein interaktives Single-Page-Dossier. 
+         Die Navigation ist fixiert, um schnellen Zugriff auf Markt, Rolle, Success Story und Roadmap zu gewähren. 
+         Der Fokus liegt auf der Transformation von technischer Identitäts-Expertise (FIDO) in geschäftlichen Mehrwert (Conversion). 
+         Die Architektur ist modular aufgebaut, um die Inhalte für Mario und das Team explorativ erlebbar zu machen. -->
+    <!-- Visualization & Content Choices: 
+         1. Marktsicht: Dynamische Kacheln für Zielmärkte (Finance, HR, Real Estate).
+         2. Brücken-Modell: Darstellung der Engagement-Rolle als Connector zwischen IT (DevOps) und Business.
+         3. Success Story: Chart.js Visualisierung der "Time-to-Success" (Vergleich SMS vs. FIDO).
+         4. Roadmap: Strukturierter 90-Tage-Plan mit Fokus auf Bern/Zürich-Kollaboration.
+         CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="min-h-screen">
+
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-stone-200 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-2 h-8 bg-orange-600"></div>
+                <h1 class="font-extrabold text-xl tracking-tighter uppercase">Digital Trust <span class="text-blue-700 font-black">Strategy</span></h1>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-stone-500 uppercase tracking-widest">
+                <button onclick="scrollToSection('market')" class="nav-link hover:text-stone-900 transition-all">Markt</button>
+                <button onclick="scrollToSection('role')" class="nav-link hover:text-stone-900 transition-all">Engagement</button>
+                <button onclick="scrollToSection('story')" class="nav-link hover:text-stone-900 transition-all">Case Study</button>
+                <button onclick="scrollToSection('roadmap')" class="nav-link hover:text-stone-900 transition-all">Roadmap</button>
+            </div>
+            <button onclick="scrollToSection('contact')" class="bg-blue-700 text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-blue-800 transition-all">
+                Let's Talk
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-40 pb-20 px-6 text-center">
+        <div class="max-w-4xl mx-auto fade-in">
+            <span class="text-orange-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Kandidaten-Profil: Christoph</span>
+            <h2 class="text-5xl md:text-7xl font-black tracking-tighter text-stone-900 mb-8 leading-[0.9]">
+                Vertrauen skalieren durch <span class="text-blue-700">Identity-Exzellenz.</span>
+            </h2>
+            <p class="text-stone-500 text-xl md:text-2xl font-light max-w-2xl mx-auto mb-12">
+                Wie wir STS zum Goldstandard im DACH-Raum machen – mit Fokus auf Prozess-Sicherheit und radikaler Nutzerzentrierung.
+            </p>
+        </div>
+    </header>
+
+    <!-- Market Analysis Section -->
+    <section id="market" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h3 class="text-3xl font-extrabold tracking-tighter mb-4 text-stone-900">1. Die Evolution des Marktes</h3>
+                <p class="text-stone-500 max-w-3xl text-lg">
+                    In diesem Bereich betrachten wir die vertikalen Märkte, in denen die Swisscom Trust Services (STS) den grössten Impact erzielen. Der Schlüssel liegt nicht im Verkauf einer API, sondern in der Lösung von spezifischen "Medienbruch-Schmerzen".
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-[2rem] bg-stone-50 border border-stone-100 card-interaction transition-all">
+                    <div class="text-4xl mb-6">🏦</div>
+                    <h4 class="font-bold text-xl mb-4">Banking & Finance</h4>
+                    <p class="text-sm text-stone-500 leading-relaxed">
+                        Abbrüche bei Kreditanträgen minimieren. Wir wandeln mühsame Video-Identifikationen in sekundenschnelle FIDO-Re-Authentifizierungen um.
+                    </p>
+                </div>
+                <div class="p-8 rounded-[2rem] bg-stone-50 border border-stone-100 card-interaction transition-all">
+                    <div class="text-4xl mb-6">👥</div>
+                    <h4 class="font-bold text-xl mb-4">HR & Talent</h4>
+                    <p class="text-sm text-stone-500 leading-relaxed">
+                        Instant-Recruiting. Die rechtsgültige QES-Unterschrift wird zum "Quick Win" am Ende eines digitalen Onboardings.
+                    </p>
+                </div>
+                <div class="p-8 rounded-[2rem] bg-stone-50 border border-stone-100 card-interaction transition-all">
+                    <div class="text-4xl mb-6">🏛️</div>
+                    <h4 class="font-bold text-xl mb-4">GovTech & Glaux</h4>
+                    <p class="text-sm text-stone-500 leading-relaxed">
+                        Bürgernahe Verwaltung. Durch Partner wie Glaux bringen wir STS direkt in die Fachanwendungen der Behörden.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Role / Bridge Section -->
+    <section id="role" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 text-center">
+                <h3 class="text-3xl font-extrabold tracking-tighter mb-4 text-stone-900">2. Die Engagement-Rolle als Katalysator</h3>
+                <p class="text-stone-500 max-w-2xl mx-auto text-lg">
+                    Ein Engagement Manager bei STS ist für mich der strategische Übersetzer zwischen den technologischen Möglichkeiten (DevOps) und den realen Business-Problemen der Partner.
+                </p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12 bg-stone-900 p-12 rounded-[3rem] text-white">
+                <div class="flex-1 space-y-4">
+                    <div class="bg-blue-600/20 p-6 rounded-2xl border border-blue-500/30">
+                        <h5 class="font-bold text-blue-400 mb-2 uppercase text-xs tracking-widest">Markt-Input</h5>
+                        <p class="text-sm text-stone-300 italic">"Unsere Partner brauchen QES, aber die Nutzer hassen das Video-Ident."</p>
+                    </div>
+                    <div class="bg-stone-800 p-6 rounded-2xl">
+                        <h5 class="font-bold text-stone-400 mb-2 uppercase text-xs tracking-widest">Meine Rolle</h5>
+                        <p class="font-semibold">Schnittstellen-Management & Lösungsdesign</p>
+                    </div>
+                </div>
+
+                <div class="flex-none text-6xl text-orange-500 rotate-90 lg:rotate-0">➔</div>
+
+                <div class="flex-1 space-y-4">
+                    <div class="bg-green-600/20 p-6 rounded-2xl border border-green-500/30">
+                        <h5 class="font-bold text-green-400 mb-2 uppercase text-xs tracking-widest">STS Lösung</h5>
+                        <p class="text-sm text-stone-300 italic">"Wir implementieren den FIDO-Fallback für Bestandskunden. Schneller, sicherer, lukrativer."</p>
+                    </div>
+                    <div class="bg-stone-800 p-6 rounded-2xl">
+                        <h5 class="font-bold text-stone-400 mb-2 uppercase text-xs tracking-widest">Umsatz-Impact</h5>
+                        <p class="font-semibold">Skalierbare Transaktionen & Partnerbindung</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Story Section (Optimized Friction Explanation) -->
+    <section id="story" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h3 class="text-3xl font-extrabold tracking-tighter mb-4 text-stone-900">3. Proof of Concept: Identity @ PostFinance</h3>
+                <p class="text-stone-500 max-w-3xl text-lg">
+                    In diesem Case Study Bereich verdeutlichen wir den messbaren Erfolg von Identitäts-Innovationen. Anstatt Nutzer durch komplizierte Sicherheitsabfragen zu frustrieren, machen wir Sicherheit zum Teil des nahtlosen Erlebnisses.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="p-8 rounded-3xl bg-blue-50 border border-blue-100">
+                        <h4 class="font-bold text-xl text-blue-900 mb-4">Das Problem: Der SMS-Abbruch</h4>
+                        <p class="text-sm text-blue-800 leading-relaxed">
+                            Bei PostFinance führten SMS-TAN-Verfahren oft zu Abbrüchen (Zeitüberschreitung, Funkloch, Code-Eingabefehler). Das verringerte die Conversion bei wichtigen Transaktionen.
+                        </p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-orange-50 border border-orange-100">
+                        <h4 class="font-bold text-xl text-orange-900 mb-4">Die FIDO-Revolution</h4>
+                        <p class="text-sm text-orange-800 leading-relaxed">
+                            Durch die Einführung biometrischer Authentifizierung (FaceID/TouchID) sank die Zeit für eine Freigabe von durchschnittlich 25 Sekunden auf unter 3 Sekunden. Die Erfolgsrate stieg massiv.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="p-10 rounded-[3rem] bg-stone-50 border border-stone-200">
+                    <h4 class="text-center font-bold text-stone-400 uppercase text-[10px] tracking-widest mb-8">Signatur-Effizienz: Zeitaufwand pro Transaktion</h4>
+                    <div class="chart-container">
+                        <canvas id="efficiencyChart"></canvas>
+                    </div>
+                    <p class="text-center text-[10px] text-stone-400 mt-6 italic">
+                        Interpretation: Je kürzer der Balken, desto höher die Conversion und Kundenzufriedenheit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SWOT Section -->
+    <section id="swot" class="py-24 px-6 bg-stone-50">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-3xl font-extrabold tracking-tighter mb-12 text-stone-900">4. Strategische Selbsteinschätzung (SWOT)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-8 bg-white rounded-3xl border border-stone-200">
+                    <h5 class="text-green-600 font-bold mb-4 uppercase text-xs tracking-widest">Stärken</h5>
+                    <ul class="text-sm space-y-3 text-stone-600">
+                        <li class="flex items-start"><span class="mr-2 text-green-500">✔</span> Profunde Identity-Expertise (FIDO/PostFinance)</li>
+                        <li class="flex items-start"><span class="mr-2 text-green-500">✔</span> Business-Analyst-Mindset: Daten statt Vermutungen</li>
+                        <li class="flex items-start"><span class="mr-2 text-green-500">✔</span> Schweizer Werte & Verlässlichkeit</li>
+                    </ul>
+                </div>
+                <div class="p-8 bg-white rounded-3xl border border-stone-200">
+                    <h5 class="text-orange-600 font-bold mb-4 uppercase text-xs tracking-widest">Lernfelder</h5>
+                    <ul class="text-sm space-y-3 text-stone-600">
+                        <li class="flex items-start"><span class="mr-2 text-orange-500">!</span> Kein Programmierer (Fokus auf Architektur-Verständnis)</li>
+                        <li class="flex items-start"><span class="mr-2 text-orange-500">!</span> EU-eIDAS Details: Lernkurve für DE/AT Märkte</li>
+                    </ul>
+                </div>
+                <div class="p-8 bg-white rounded-3xl border border-stone-200">
+                    <h5 class="text-blue-600 font-bold mb-4 uppercase text-xs tracking-widest">Chancen</h5>
+                    <ul class="text-sm space-y-3 text-stone-600">
+                        <li class="flex items-start"><span class="mr-2 text-blue-500">➚</span> QES-Adoption durch Passkeys massiv steigern</li>
+                        <li class="flex items-start"><span class="mr-2 text-blue-500">➚</span> Vertikale Partner-Ökosysteme im DACH-Raum ausbauen</li>
+                    </ul>
+                </div>
+                <div class="p-8 bg-white rounded-3xl border border-stone-200">
+                    <h5 class="text-red-600 font-bold mb-4 uppercase text-xs tracking-widest">Risiken</h5>
+                    <ul class="text-sm space-y-3 text-stone-600">
+                        <li class="flex items-start"><span class="mr-2 text-red-500">✖</span> Commodity-Falle bei einfachen Signaturen</li>
+                        <li class="flex items-start"><span class="mr-2 text-red-500">✖</span> US-Wettbewerb mit radikalen UX-Ansätzen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-3xl font-extrabold tracking-tighter mb-12 text-stone-900 text-center">5. Die ersten 90 Tage: Bern ➔ Zürich ➔ DACH</h3>
+            
+            <div class="space-y-8 max-w-4xl mx-auto">
+                <div class="flex items-start gap-8">
+                    <div class="flex-none w-16 h-16 rounded-full bg-stone-900 text-white flex items-center justify-center font-bold text-xl">30d</div>
+                    <div class="bg-stone-50 p-8 rounded-3xl border border-stone-200 flex-1">
+                        <h4 class="font-bold text-lg mb-2">Analyse & Vernetzung</h4>
+                        <p class="text-sm text-stone-500">Deep-Dive in das Produktportfolio. Stakeholder-Safari in Zürich zur Festigung der DevOps-Kollaboration. Verständnis der Partner-Pipeline.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-8">
+                    <div class="flex-none w-16 h-16 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold text-xl">60d</div>
+                    <div class="bg-stone-50 p-8 rounded-3xl border border-stone-200 flex-1">
+                        <h4 class="font-bold text-lg mb-2">Strategisches Hunting</h4>
+                        <p class="text-sm text-stone-500">Identifikation der Top-Hebel im DACH-Raum. Erstgespräche mit potenziellen Partnern. Optimierung des Onboarding-Prozesses für Neukunden.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-8">
+                    <div class="flex-none w-16 h-16 rounded-full bg-orange-600 text-white flex items-center justify-center font-bold text-xl">90d</div>
+                    <div class="bg-stone-50 p-8 rounded-3xl border border-stone-200 flex-1">
+                        <h4 class="font-bold text-lg mb-2">Impact & Expansion</h4>
+                        <p class="text-sm text-stone-500">Abschluss erster Pilotprojekte. Etablierung einer stabilen Feedback-Loop zwischen Markt (Bern/Zürich) und Entwicklung (Zürich).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 p-12 rounded-[3rem] bg-stone-900 text-white flex flex-col md:flex-row items-center gap-8 shadow-2xl overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-700/20 blur-[100px] rounded-full"></div>
+                <div class="text-6xl">📍</div>
+                <div>
+                    <h4 class="text-2xl font-bold mb-2 tracking-tight">Homebase: Bern | Fokus: Zürich & DACH</h4>
+                    <p class="text-stone-400 text-lg leading-relaxed">
+                        Mein Lebensmittelpunkt in Bern bietet mir die nötige Ruhe für fokussierte Business-Planung, während die hervorragende Anbindung nach Zürich eine regelmässige und effiziente Präsenz vor Ort garantiert.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-20 px-6 border-t border-stone-200 text-center">
+        <h3 class="text-4xl font-black tracking-tighter mb-8">Bereit für den nächsten Schritt?</h3>
+        <p class="text-stone-500 mb-12 max-w-xl mx-auto">Ich freue mich auf den Deep-Dive in Zürich und darauf, meine Erfahrungen einzubringen.</p>
+        <div class="flex justify-center space-x-6">
+            <span class="text-xs font-bold uppercase tracking-widest text-stone-400">Swisscom Trust Services</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-stone-400">Engagement Manager Strategie</span>
+        </div>
+    </footer>
+
+    <script>
+        // --- NAVIGATION LOGIC ---
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if(el) {
+                window.scrollTo({
+                    top: el.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // --- CHART IMPLEMENTATION ---
+        function initCharts() {
+            const ctx = document.getElementById('efficiencyChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['SMS / Hardware-Token', 'FIDO / Passkeys (STS)'],
+                    datasets: [{
+                        label: 'Sekunden bis zur erfolgreichen Freigabe',
+                        data: [25, 3],
+                        backgroundColor: ['#D1D5DB', '#FF5000'],
+                        borderRadius: 12,
+                        barThickness: 50
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.x + ' Sekunden';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: { display: false },
+                            ticks: { font: { size: 10, weight: 'bold' } }
+                        },
+                        y: {
+                            grid: { display: false },
+                            ticks: { font: { size: 11, weight: 'bold' } }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Load Chart on Window Load
+        window.onload = function() {
+            initCharts();
+        };
+
+        // Interaction for Nav Links
+        window.addEventListener('scroll', () => {
+            let current = "";
+            const sections = document.querySelectorAll("section");
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            document.querySelectorAll(".nav-link").forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("onclick").includes(current)) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
