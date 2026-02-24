@@ -59,16 +59,10 @@
         }
     </style>
     <!-- Chosen Palette: Swisscom Modern (Warme Neutralkolben mit Akzenten in Signal-Blau und Orange) -->
-    <!-- Application Structure Plan: Ein interaktives Single-Page-Dossier. 
-         Die Navigation ist fixiert, um schnellen Zugriff auf Markt, Rolle, Success Story und Roadmap zu gewähren. 
-         Der Fokus liegt auf der Transformation von technischer Identitäts-Expertise (FIDO) in geschäftlichen Mehrwert (Conversion). 
-         Die Architektur ist modular aufgebaut, um die Inhalte für Mario und das Team explorativ erlebbar zu machen. -->
-    <!-- Visualization & Content Choices: 
-         1. Marktsicht: Dynamische Kacheln für Zielmärkte (Finance, HR, Real Estate).
-         2. Brücken-Modell: Darstellung der Engagement-Rolle als Connector zwischen IT (DevOps) und Business.
-         3. Success Story: Chart.js Visualisierung der "Time-to-Success" (Vergleich SMS vs. FIDO).
-         4. Roadmap: Strukturierter 90-Tage-Plan mit Fokus auf Bern/Zürich-Kollaboration.
-         CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <!-- Application Structure Plan: Ein interaktives Single-Page-Dossier für die Vor-Ort-Präsentation. 
+         Die Navigation ermöglicht schnellen Zugriff auf die Kernbereiche. 
+         Der Fokus liegt auf der Transformation von FIDO-Expertise in geschäftliche Conversion. 
+         Optimiert für Live-Präsentation ohne unnötige CTA-Buttons. -->
 </head>
 <body class="min-h-screen">
 
@@ -79,15 +73,12 @@
                 <div class="w-2 h-8 bg-orange-600"></div>
                 <h1 class="font-extrabold text-xl tracking-tighter uppercase">Digital Trust <span class="text-blue-700 font-black">Strategy</span></h1>
             </div>
-            <div class="hidden md:flex space-x-8 text-sm font-semibold text-stone-500 uppercase tracking-widest">
+            <div class="flex space-x-8 text-sm font-semibold text-stone-500 uppercase tracking-widest">
                 <button onclick="scrollToSection('market')" class="nav-link hover:text-stone-900 transition-all">Markt</button>
                 <button onclick="scrollToSection('role')" class="nav-link hover:text-stone-900 transition-all">Engagement</button>
                 <button onclick="scrollToSection('story')" class="nav-link hover:text-stone-900 transition-all">Case Study</button>
                 <button onclick="scrollToSection('roadmap')" class="nav-link hover:text-stone-900 transition-all">Roadmap</button>
             </div>
-            <button onclick="scrollToSection('contact')" class="bg-blue-700 text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-blue-800 transition-all">
-                Let's Talk
-            </button>
         </div>
     </nav>
 
@@ -178,7 +169,7 @@
         </div>
     </section>
 
-    <!-- Success Story Section (Optimized Friction Explanation) -->
+    <!-- Success Story Section -->
     <section id="story" class="py-24 px-6 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16">
@@ -258,14 +249,14 @@
     <!-- Roadmap Section -->
     <section id="roadmap" class="py-24 px-6 bg-white">
         <div class="max-w-7xl mx-auto">
-            <h3 class="text-3xl font-extrabold tracking-tighter mb-12 text-stone-900 text-center">5. Die ersten 90 Tage: Bern ➔ Zürich ➔ DACH</h3>
+            <h3 class="text-3xl font-extrabold tracking-tighter mb-12 text-stone-900 text-center">5. Die ersten 90 Tage: Markteintritt & Impact</h3>
             
             <div class="space-y-8 max-w-4xl mx-auto">
                 <div class="flex items-start gap-8">
                     <div class="flex-none w-16 h-16 rounded-full bg-stone-900 text-white flex items-center justify-center font-bold text-xl">30d</div>
                     <div class="bg-stone-50 p-8 rounded-3xl border border-stone-200 flex-1">
                         <h4 class="font-bold text-lg mb-2">Analyse & Vernetzung</h4>
-                        <p class="text-sm text-stone-500">Deep-Dive in das Produktportfolio. Stakeholder-Safari in Zürich zur Festigung der DevOps-Kollaboration. Verständnis der Partner-Pipeline.</p>
+                        <p class="text-sm text-stone-500">Deep-Dive in das Produktportfolio. Stakeholder-Safari zur Festigung der DevOps-Kollaboration. Verständnis der Partner-Pipeline.</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-8">
@@ -279,19 +270,8 @@
                     <div class="flex-none w-16 h-16 rounded-full bg-orange-600 text-white flex items-center justify-center font-bold text-xl">90d</div>
                     <div class="bg-stone-50 p-8 rounded-3xl border border-stone-200 flex-1">
                         <h4 class="font-bold text-lg mb-2">Impact & Expansion</h4>
-                        <p class="text-sm text-stone-500">Abschluss erster Pilotprojekte. Etablierung einer stabilen Feedback-Loop zwischen Markt (Bern/Zürich) und Entwicklung (Zürich).</p>
+                        <p class="text-sm text-stone-500">Abschluss erster Pilotprojekte. Etablierung einer stabilen Feedback-Loop zwischen Marktbedürfnissen und Entwicklung.</p>
                     </div>
-                </div>
-            </div>
-
-            <div class="mt-20 p-12 rounded-[3rem] bg-stone-900 text-white flex flex-col md:flex-row items-center gap-8 shadow-2xl overflow-hidden relative">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-700/20 blur-[100px] rounded-full"></div>
-                <div class="text-6xl">📍</div>
-                <div>
-                    <h4 class="text-2xl font-bold mb-2 tracking-tight">Homebase: Bern | Fokus: Zürich & DACH</h4>
-                    <p class="text-stone-400 text-lg leading-relaxed">
-                        Mein Lebensmittelpunkt in Bern bietet mir die nötige Ruhe für fokussierte Business-Planung, während die hervorragende Anbindung nach Zürich eine regelmässige und effiziente Präsenz vor Ort garantiert.
-                    </p>
                 </div>
             </div>
         </div>
@@ -299,8 +279,7 @@
 
     <!-- Footer -->
     <footer id="contact" class="py-20 px-6 border-t border-stone-200 text-center">
-        <h3 class="text-4xl font-black tracking-tighter mb-8">Bereit für den nächsten Schritt?</h3>
-        <p class="text-stone-500 mb-12 max-w-xl mx-auto">Ich freue mich auf den Deep-Dive in Zürich und darauf, meine Erfahrungen einzubringen.</p>
+        <h3 class="text-4xl font-black tracking-tighter mb-8">Vielen Dank für Ihre Aufmerksamkeit</h3>
         <div class="flex justify-center space-x-6">
             <span class="text-xs font-bold uppercase tracking-widest text-stone-400">Swisscom Trust Services</span>
             <span class="text-xs font-bold uppercase tracking-widest text-stone-400">Engagement Manager Strategie</span>
@@ -321,7 +300,9 @@
 
         // --- CHART IMPLEMENTATION ---
         function initCharts() {
-            const ctx = document.getElementById('efficiencyChart').getContext('2d');
+            const canvas = document.getElementById('efficiencyChart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -363,12 +344,10 @@
             });
         }
 
-        // Load Chart on Window Load
         window.onload = function() {
             initCharts();
         };
 
-        // Interaction for Nav Links
         window.addEventListener('scroll', () => {
             let current = "";
             const sections = document.querySelectorAll("section");
@@ -381,7 +360,8 @@
 
             document.querySelectorAll(".nav-link").forEach((link) => {
                 link.classList.remove("active");
-                if (link.getAttribute("onclick").includes(current)) {
+                const onclickVal = link.getAttribute("onclick");
+                if (onclickVal && onclickVal.includes(current)) {
                     link.classList.add("active");
                 }
             });
