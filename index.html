@@ -23,7 +23,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Hero Hintergrund optimiert für Matterhorn Sichtbarkeit */
+        /* Hero Hintergrund mit deiner lokalen Datei berg.jpg */
         .hero-bg {
             position: relative;
             background-image: linear-gradient(rgba(28, 25, 23, 0.55), rgba(28, 25, 23, 0.35)), url('berg.jpg');
@@ -75,12 +75,13 @@
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05);
         }
 
-        /* Grid für saubere Listen-Ausrichtung */
+        /* Grid für saubere Listen-Ausrichtung ohne Layout-Fehler */
         .icon-list-item {
             display: grid;
             grid-template-columns: 32px 1fr;
             align-items: start;
             gap: 8px;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -148,7 +149,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
                 <div class="p-8 bg-white rounded-3xl shadow-sm border border-stone-200">
                     <h4 class="font-bold text-xl mb-8 text-blue-700">Unternehmerische Steuerung</h4>
-                    <ul class="space-y-6 text-sm text-stone-600 leading-relaxed">
+                    <ul class="space-y-2 text-sm text-stone-600 leading-relaxed">
                         <li class="icon-list-item">
                             <span class="text-orange-500 font-bold text-lg">✔</span>
                             <div>
@@ -176,15 +177,15 @@
                     <h4 class="font-bold text-xl mb-6 italic">Erfolgsfaktoren</h4>
                     <div class="space-y-4">
                         <div class="flex items-center gap-4">
-                            <span class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center font-bold">€</span>
+                            <span class="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center font-bold">€</span>
                             <p class="text-sm">Umsatzverantwortung & Hunting-Mindset</p>
                         </div>
                         <div class="flex items-center gap-4">
-                            <span class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center font-bold">🤝</span>
+                            <span class="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center font-bold">🤝</span>
                             <p class="text-sm">Vertrauen durch Professional Expertise</p>
                         </div>
                         <div class="flex items-center gap-4">
-                            <span class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center font-bold">📢</span>
+                            <span class="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center font-bold">📢</span>
                             <p class="text-sm">Präsenz & Visibilität im Ökosystem</p>
                         </div>
                     </div>
@@ -206,15 +207,15 @@
                     <h4 class="font-bold text-xl text-blue-700">Learnings & Transferleistung</h4>
                     <ul class="space-y-4 text-sm text-stone-600 leading-relaxed">
                         <li class="flex items-start">
-                            <span class="text-blue-700 mr-3">•</span>
+                            <span class="text-blue-700 mr-3 font-bold">•</span>
                             <span><strong>Herausforderung:</strong>&nbsp;Compliance-Vorgaben (FINMA) mit radikaler UX vereinen.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-blue-700 mr-3">•</span>
+                            <span class="text-blue-700 mr-3 font-bold">•</span>
                             <span><strong>Analogie zu STS:</strong>&nbsp;Die rechtliche Hürde der QES durch moderne Technik (FIDO) für den User unsichtbar machen.</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-blue-700 mr-3">•</span>
+                            <span class="text-blue-700 mr-3 font-bold">•</span>
                             <span><strong>Erfolg:</strong>&nbsp;Massive Steigerung der Conversion und Senkung des Support-Overheads.</span>
                         </li>
                     </ul>
@@ -225,12 +226,12 @@
 
     <!-- 4. SWOT -->
     <section id="swot" class="py-24 px-6 bg-stone-900 text-white border-b border-stone-100">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto text-center md:text-left">
             <h3 class="text-4xl font-extrabold tracking-tighter mb-6 uppercase">4. SWOT: Einschätzung & Reflexion</h3>
-            <p class="text-stone-400 mb-12 text-lg max-w-3xl leading-relaxed italic text-center">Abgleich meiner Kompetenzen mit dem Profil der Digital Trust Gruppe.</p>
+            <p class="text-stone-400 mb-12 text-lg max-w-3xl leading-relaxed italic mx-auto md:mx-0">Abgleich meiner Kompetenzen mit dem Profil der Digital Trust Gruppe.</p>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="space-y-6">
+                <div class="space-y-6 text-left">
                     <div class="p-8 rounded-[2.5rem] bg-white/5 border border-white/10">
                         <h4 class="text-orange-500 font-black uppercase text-xs tracking-widest mb-6 italic">Was ich einbringe</h4>
                         <ul class="space-y-4 text-sm leading-relaxed">
@@ -240,12 +241,12 @@
                         </ul>
                     </div>
                 </div>
-                <div class="space-y-6">
+                <div class="space-y-6 text-left">
                     <div class="p-8 rounded-[2.5rem] bg-white/5 border border-white/10">
                         <h4 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-6 italic">Lücken & Entwicklung</h4>
                         <ul class="space-y-4 text-sm leading-relaxed text-stone-300">
-                            <li class="icon-list-item"><span class="text-orange-500 font-bold">!</span> <div><strong>EU-Markt:</strong>&nbsp;Spezifische DE/AT Dynamiken als primäres Lernfeld.</div></li>
-                            <li class="icon-list-item"><span class="text-orange-500 font-bold">!</span> <div><strong>Tech-Deep-Dive:</strong>&nbsp;Vertiefung der backend-seitigen API-Architektur.</div></li>
+                            <li class="icon-list-item"><span class="text-orange-500 font-bold text-lg">!</span> <div><strong>EU-Markt:</strong>&nbsp;Spezifische DE/AT Dynamiken als primäres Lernfeld.</div></li>
+                            <li class="icon-list-item"><span class="text-orange-500 font-bold text-lg">!</span> <div><strong>Tech-Deep-Dive:</strong>&nbsp;Vertiefung der backend-seitigen API-Architektur.</div></li>
                         </ul>
                     </div>
                 </div>
@@ -290,13 +291,13 @@
                 <h4 class="text-2xl font-bold mb-8 text-center italic tracking-tight">Voraussetzungen für Erfolg</h4>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-stone-300">
                     <div class="p-4 border-l border-stone-700">
-                        <strong>Transparenz:</strong> Einblick in die technische Roadmap für verlässliche Partner-Aussagen.
+                        <strong>Transparenz:</strong>&nbsp;Einblick in die technische Roadmap für verlässliche Partner-Aussagen.
                     </div>
                     <div class="p-4 border-l border-stone-700">
-                        <strong>Speed:</strong> Kurze Dienstwege zum Engineering der Swisscom Trust Services AG.
+                        <strong>Speed:</strong>&nbsp;Kurze Dienstwege zum Engineering der Swisscom Trust Services AG.
                     </div>
                     <div class="p-4 border-l border-stone-700">
-                        <strong>Flexibilität:</strong> Vertrauen in eigenverantwortliche Markterschliessung im DACH-Raum.
+                        <strong>Flexibilität:</strong>&nbsp;Vertrauen in eigenverantwortliche Markterschliessung im DACH-Raum.
                     </div>
                 </div>
             </div>
