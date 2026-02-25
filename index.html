@@ -23,20 +23,15 @@
             scroll-behavior: smooth;
         }
 
-        /* Hero Hintergrund mit optimiertem Dateinamen */
+        /* Hero Hintergrund optimiert für volle Sichtbarkeit des Matterhorns */
         .hero-bg {
             position: relative;
-            background-image: linear-gradient(rgba(28, 25, 23, 0.6), rgba(28, 25, 23, 0.4)), url('https://upload.wikimedia.org/wikipedia/commons/6/60/Matterhorn_from_Domhütte_-_2.jpg');
+            background-image: linear-gradient(rgba(28, 25, 23, 0.5), rgba(28, 25, 23, 0.3)), url('https://upload.wikimedia.org/wikipedia/commons/6/60/Matterhorn_from_Domhütte_-_2.jpg');
             background-size: cover;
-            background-position: center 30%;
-            background-attachment: fixed;
-        }
-
-        /* Fallback für Mobile (Fixed Background Support) */
-        @media (max-width: 768px) {
-            .hero-bg {
-                background-attachment: scroll;
-            }
+            /* Zentriert den Gipfel besser und verhindert Abschneiden */
+            background-position: center 40%; 
+            /* 'scroll' statt 'fixed' verhindert das automatische Zoomen des Browsers */
+            background-attachment: scroll; 
         }
 
         .chart-container {
@@ -114,15 +109,15 @@
         </div>
     </nav>
 
-    <!-- Hero Sektion -->
-    <header class="hero-bg min-h-[80vh] flex items-center justify-center px-6 text-center text-white">
+    <!-- Hero Sektion - min-height leicht erhöht für Panorama-Wirkung -->
+    <header class="hero-bg min-h-[90vh] flex items-center justify-center px-6 text-center text-white">
         <div class="max-w-4xl mx-auto fade-in">
             <span class="text-orange-500 font-bold tracking-[0.4em] uppercase text-xs mb-6 block">Swisscom Trust Services | Engagement Strategie</span>
             <h2 class="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.85]">
                 Gipfelleistung in der <span class="text-blue-400">Identität.</span>
             </h2>
             <p class="text-stone-200 text-xl md:text-2xl font-light max-w-2xl mx-auto mb-12 leading-relaxed">
-                Rechtssicherheit trifft auf radikale Einfachheit. Wie wir STS zum Standard für den DACH-Raum machen.
+                Rechtssicherheit trifft auf radikale Einfachheit.<br>Wie wir STS zum Standard für den DACH-Raum machen.
             </p>
             <div class="flex justify-center space-x-4">
                 <div class="h-1 w-12 bg-orange-600 self-center"></div>
