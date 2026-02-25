@@ -26,7 +26,7 @@
         /* Hero Hintergrund optimiert für Matterhorn Sichtbarkeit */
         .hero-bg {
             position: relative;
-            background-image: linear-gradient(rgba(28, 25, 23, 0.55), rgba(28, 25, 23, 0.35)), url('berg.jpg');
+            background-image: linear-gradient(rgba(28, 25, 23, 0.55), rgba(28, 25, 23, 0.35)), url('https://upload.wikimedia.org/wikipedia/commons/6/60/Matterhorn_from_Domhütte_-_2.jpg');
             background-size: cover;
             background-position: 50% 20%; 
             background-attachment: scroll; 
@@ -74,6 +74,14 @@
             transform: translateY(-4px);
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05);
         }
+
+        /* Grid für saubere Listen-Ausrichtung */
+        .icon-list-item {
+            display: grid;
+            grid-template-columns: 28px 1fr;
+            align-items: start;
+            gap: 4px;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -115,7 +123,7 @@
     <!-- 1. Marktsicht -->
     <section id="market" class="py-24 px-6 bg-white border-b border-stone-100">
         <div class="max-w-7xl mx-auto">
-            <h3 class="text-4xl font-extrabold tracking-tighter mb-12 text-stone-900">1. Marktsicht & Business Evaluation</h3>
+            <h3 class="text-4xl font-extrabold tracking-tighter mb-12 text-stone-900 uppercase">1. Marktsicht & Business Evaluation</h3>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
                 <div class="p-8 rounded-[2rem] bg-stone-50 card-interaction transition-all border border-stone-100">
                     <h4 class="font-bold text-xl mb-4 text-blue-700 underline decoration-orange-500 underline-offset-8 text-sm uppercase tracking-wider">Faszination</h4>
@@ -133,17 +141,35 @@
         </div>
     </section>
 
-    <!-- 2. Die Disziplin -->
+    <!-- 2. Die Disziplin (Layout Fix hier) -->
     <section id="role" class="py-24 px-6 bg-stone-50 border-b border-stone-100">
         <div class="max-w-7xl mx-auto">
-            <h3 class="text-4xl font-extrabold tracking-tighter mb-4 text-stone-900">2. Disziplin: Engagement Management</h3>
+            <h3 class="text-4xl font-extrabold tracking-tighter mb-4 text-stone-900 uppercase">2. Disziplin: Engagement Management</h3>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
                 <div class="p-8 bg-white rounded-3xl shadow-sm border border-stone-200">
-                    <h4 class="font-bold text-xl mb-6 text-blue-700">Unternehmerische Steuerung</h4>
-                    <ul class="space-y-4 text-sm text-stone-600 leading-relaxed">
-                        <li class="flex items-start"><span class="text-orange-500 mr-3">✔</span> <strong>Business Planning:</strong> Identifikation und Evaluierung von Umsatzpotentialen.</li>
-                        <li class="flex items-start"><span class="text-orange-500 mr-3">✔</span> <strong>Partner-Growth:</strong> Aktive Betreuung und Skalierung von Bestandskunden.</li>
-                        <li class="flex items-start"><span class="text-orange-500 mr-3">✔</span> <strong>API-Orchestrierung:</strong> Brücke zwischen Kundenbedürfnis und technischer Roadmap.</li>
+                    <h4 class="font-bold text-xl mb-8 text-blue-700">Unternehmerische Steuerung</h4>
+                    <ul class="space-y-6 text-sm text-stone-600 leading-relaxed">
+                        <li class="icon-list-item">
+                            <span class="text-orange-500 font-bold text-lg">✔</span>
+                            <div>
+                                <span class="font-bold text-stone-800">Business Planning:</span><br>
+                                Identifikation und Evaluierung von Umsatzpotentialen.
+                            </div>
+                        </li>
+                        <li class="icon-list-item">
+                            <span class="text-orange-500 font-bold text-lg">✔</span>
+                            <div>
+                                <span class="font-bold text-stone-800">Partner-Growth:</span><br>
+                                Aktive Betreuung und Skalierung von Bestandskunden.
+                            </div>
+                        </li>
+                        <li class="icon-list-item">
+                            <span class="text-orange-500 font-bold text-lg">✔</span>
+                            <div>
+                                <span class="font-bold text-stone-800">API-Orchestrierung:</span><br>
+                                Brücke zwischen Kundenbedürfnis und technischer Roadmap.
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div class="bg-blue-900 text-white p-10 rounded-[3rem] shadow-xl flex flex-col justify-center">
@@ -170,10 +196,10 @@
     <!-- 3. Success Story -->
     <section id="story" class="py-24 px-6 bg-white border-b border-stone-100">
         <div class="max-w-7xl mx-auto">
-            <h3 class="text-4xl font-extrabold tracking-tighter mb-12 text-stone-900">3. Success Story: FIDO @ PostFinance</h3>
+            <h3 class="text-4xl font-extrabold tracking-tighter mb-12 text-stone-900 uppercase">3. Success Story: FIDO @ PostFinance</h3>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="bg-stone-50 p-10 rounded-[3rem] border border-stone-200">
-                    <h4 class="text-center font-bold text-stone-400 uppercase text-[10px] tracking-widest mb-10">Zeitaufwand (Sekunden)</h4>
+                    <h4 class="text-center font-bold text-stone-400 uppercase text-[10px] tracking-widest mb-10 text-center">Zeitaufwand pro Transaktion</h4>
                     <div class="chart-container"><canvas id="efficiencyChart"></canvas></div>
                 </div>
                 <div class="space-y-6">
@@ -200,17 +226,17 @@
     <!-- 4. SWOT -->
     <section id="swot" class="py-24 px-6 bg-stone-900 text-white border-b border-stone-100">
         <div class="max-w-7xl mx-auto">
-            <h3 class="text-4xl font-extrabold tracking-tighter mb-6">4. SWOT: Einschätzung & Reflexion</h3>
-            <p class="text-stone-400 mb-12 text-lg max-w-3xl leading-relaxed italic">Abgleich meiner Kompetenzen mit dem Profil der Digital Trust Gruppe.</p>
+            <h3 class="text-4xl font-extrabold tracking-tighter mb-6 uppercase">4. SWOT: Einschätzung & Reflexion</h3>
+            <p class="text-stone-400 mb-12 text-lg max-w-3xl leading-relaxed italic text-center">Abgleich meiner Kompetenzen mit dem Profil der Digital Trust Gruppe.</p>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div class="space-y-6">
                     <div class="p-8 rounded-[2.5rem] bg-white/5 border border-white/10">
                         <h4 class="text-orange-500 font-black uppercase text-xs tracking-widest mb-6 italic">Was ich einbringe</h4>
                         <ul class="space-y-4 text-sm leading-relaxed">
-                            <li class="flex items-start"><span class="text-green-400 mr-3">✔</span> <strong>Identity-Expertise:</strong> Tiefes Verständnis von biometrischen Standards.</li>
-                            <li class="flex items-start"><span class="text-green-400 mr-3">✔</span> <strong>Banking-Netzwerk:</strong> Kontakte zu Entscheidungsträgern im Finanzsektor.</li>
-                            <li class="flex items-start"><span class="text-green-400 mr-3">✔</span> <strong>Business-Planning:</strong> Erfahrung in der Evaluierung profitabler Modelle.</li>
+                            <li class="icon-list-item"><span class="text-green-400 font-bold">✔</span> <div><strong>Identity-Expertise:</strong> Tiefes Verständnis von biometrischen Standards.</div></li>
+                            <li class="icon-list-item"><span class="text-green-400 font-bold">✔</span> <div><strong>Banking-Netzwerk:</strong> Kontakte zu Entscheidungsträgern im Finanzsektor.</div></li>
+                            <li class="icon-list-item"><span class="text-green-400 font-bold">✔</span> <div><strong>Business-Planning:</strong> Erfahrung in der Evaluierung profitabler Modelle.</div></li>
                         </ul>
                     </div>
                 </div>
@@ -218,8 +244,8 @@
                     <div class="p-8 rounded-[2.5rem] bg-white/5 border border-white/10">
                         <h4 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-6 italic">Lücken & Entwicklung</h4>
                         <ul class="space-y-4 text-sm leading-relaxed text-stone-300">
-                            <li class="flex items-start"><span class="text-orange-500 mr-3">!</span> <strong>EU-Markt:</strong> Spezifische DE/AT Dynamiken als primäres Lernfeld.</li>
-                            <li class="flex items-start"><span class="text-orange-500 mr-3">!</span> <strong>Tech-Deep-Dive:</strong> Vertiefung der backend-seitigen API-Architektur.</li>
+                            <li class="icon-list-item"><span class="text-orange-500 font-bold">!</span> <div><strong>EU-Markt:</strong> Spezifische DE/AT Dynamiken als primäres Lernfeld.</div></li>
+                            <li class="icon-list-item"><span class="text-orange-500 font-bold">!</span> <div><strong>Tech-Deep-Dive:</strong> Vertiefung der backend-seitigen API-Architektur.</div></li>
                         </ul>
                     </div>
                 </div>
@@ -267,7 +293,7 @@
                         <strong>Transparenz:</strong> Einblick in die technische Roadmap für verlässliche Partner-Aussagen.
                     </div>
                     <div class="p-4 border-l border-stone-700">
-                        <strong>Speed:</strong> Kurze Dienstwege zum Engineering der STS AG.
+                        <strong>Speed:</strong> Kurze Dienstwege zum Engineering der Swisscom Trust Services AG.
                     </div>
                     <div class="p-4 border-l border-stone-700">
                         <strong>Flexibilität:</strong> Vertrauen in eigenverantwortliche Markterschliessung im DACH-Raum.
@@ -294,7 +320,9 @@
         }
 
         function initCharts() {
-            const ctx = document.getElementById('efficiencyChart').getContext('2d');
+            const canvas = document.getElementById('efficiencyChart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -326,7 +354,7 @@
             let current = "";
             const sections = document.querySelectorAll("section");
             sections.forEach((section) => {
-                if (pageYOffset >= section.offsetTop - 150) {
+                if (window.pageYOffset >= section.offsetTop - 150) {
                     current = section.getAttribute("id");
                 }
             });
